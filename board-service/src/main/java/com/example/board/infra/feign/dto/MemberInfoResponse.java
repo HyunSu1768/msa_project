@@ -1,6 +1,5 @@
-package com.example.member.controller.dto.response;
+package com.example.board.infra.feign.dto;
 
-import com.example.member.entity.Member;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -11,12 +10,5 @@ public class MemberInfoResponse {
     private String name;
 
     private String accountId;
-
-    public static MemberInfoResponse of(Member member){
-        return MemberInfoResponse.builder()
-                .accountId(member.getAccountId())
-                .name(member.getName())
-                .build();
-    }
 
 }

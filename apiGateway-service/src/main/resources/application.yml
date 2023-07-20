@@ -1,0 +1,17 @@
+server:
+  port: 8000
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: member
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/member/**
+        - id: board
+          uri: http://localhost:8082/
+          predicates:
+            - Path=/board/**
+  application:
+    name: APIGATEWAY-SERVICE

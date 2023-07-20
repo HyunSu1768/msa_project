@@ -1,2 +1,6 @@
 rootProject.name = 'msa_project'
+include 'member-service'
+include 'eureka-service'
+include 'board-service'
+include 'apiGateway-service'
 
