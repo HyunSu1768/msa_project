@@ -1,11 +1,10 @@
-package com.example.member.entity;
+package com.example.user.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.naming.Name;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,7 +15,7 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @Builder
 @Entity(name = "tbl_member")
-public class Member {
+public class User {
 
     @Id @GeneratedValue
     private Long id;
