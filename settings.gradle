@@ -3,4 +3,6 @@ include 'member-service'
 include 'eureka-service'
 include 'board-service'
 include 'apiGateway-service'
+include 'auth-service'
+include 'common'
 

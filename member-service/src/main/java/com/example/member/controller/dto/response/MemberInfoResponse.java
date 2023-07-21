@@ -12,8 +12,11 @@ public class MemberInfoResponse {
 
     private String accountId;
 
+    private String password;
+
     public static MemberInfoResponse of(Member member){
         return MemberInfoResponse.builder()
+                .password(member.getPassword())
                 .accountId(member.getAccountId())
                 .name(member.getName())
                 .build();

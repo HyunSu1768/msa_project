@@ -15,7 +15,7 @@ public class MemberService {
 
     private final MemberRepository memberRepository;
 
-    public void createUser(CreateMemberRequest request){
+    public void createMember(CreateMemberRequest request){
 
         Member member = Member.builder()
                 .accountId(request.getAccountId())
@@ -27,12 +27,20 @@ public class MemberService {
 
     }
 
-    public MemberInfoResponse loadUser(Long memberId){
+    public MemberInfoResponse loadMemer(Long memberId){
 
         Member member = memberRepository.findById(memberId).orElseThrow();
 
         return MemberInfoResponse.of(member);
 
+    }
+
+    public MemberInfoResponse loadMemberByAccountId(String accountId){
+
+        Member member = memberRepository.findByAccountId(accountId)
+                .orElseThrow();
+
+        return MemberInfoResponse.of(member);
     }
 
 }

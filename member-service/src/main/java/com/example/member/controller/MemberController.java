@@ -3,7 +3,6 @@ package com.example.member.controller;
 import com.example.member.controller.dto.request.CreateMemberRequest;
 import com.example.member.controller.dto.response.MemberInfoResponse;
 import com.example.member.service.MemberService;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,14 +16,21 @@ public class MemberController {
     @PostMapping
     public void createMember(@RequestBody CreateMemberRequest request){
 
-        memberService.createUser(request);
+        memberService.createMember(request);
 
     }
 
     @GetMapping
     public MemberInfoResponse loadMember(@RequestParam("memberId") Long memberId){
 
-        return memberService.loadUser(memberId);
+        return memberService.loadMemer(memberId);
+    }
+
+    @GetMapping("/accountId")
+    public MemberInfoResponse loadMemberByAccountId(@RequestParam("accountId") String accountId){
+
+        return memberService.loadMemberByAccountId(accountId);
+
     }
 
 
