@@ -2,8 +2,8 @@ package com.example.auth.adapter.in.web.rest;
 
 import com.example.auth.adapter.in.web.rest.dto.request.LoginRequest;
 import com.example.auth.adapter.in.web.rest.dto.response.TokenResponse;
+import com.example.auth.application.port.in.LoginUseCase;
 import com.example.auth.application.port.in.SaveUserUseCase;
-import com.example.auth.temp.controller.dto.request.CreateMemberRequest;
 import com.example.common.annotation.WebAdapter;
 import com.example.user.adapter.in.web.rest.dto.request.SaveUserDto;
 import lombok.RequiredArgsConstructor;
@@ -16,14 +16,16 @@ public class AuthWebAdapter {
 
     private final SaveUserUseCase saveUserUseCase;
 
+    private final LoginUseCase loginUseCase;
+
     @PostMapping("/auth/signup")
     public void signup(@RequestBody SaveUserDto request){
         saveUserUseCase.saveUser(request);
     }
 
     @PostMapping("/auth/login")
-    public TokenResponse login(@RequestBody LoginRequest request) throws Exception {
-        return authService.login(request);
+    public TokenResponse login(@RequestBody LoginRequest request) {
+        return loginUseCase.login(request);
     }
 
 }
