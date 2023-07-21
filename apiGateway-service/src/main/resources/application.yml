@@ -9,9 +9,24 @@ spring:
           uri: http://localhost:8081/
           predicates:
             - Path=/member/**
+          filters:
+            - AuthorizationHeaderFilter
         - id: board
           uri: http://localhost:8082/
           predicates:
             - Path=/board/**
+          filters:
+            - AuthorizationHeaderFilter
+        - id: auth
+          uri: http://localhost:8083/
+          predicates:
+            - Path=/auth/**
   application:
     name: APIGATEWAY-SERVICE
+
+jwt:
+  secretKey: ${JWT_SECRET_KEY:asdjfkasdhfjkashdfkashdfkahsdjkfahskdf}
+  accessExpiredExp: ${JWT_ACCESS_EXP:1800000}
+  refreshExpiredExp: ${JWT_REFRESH_EXP:432000000}
+  header: ${JWT_HEADER:Authorization}
+  prefix: ${JWT_PREFIX:Bearer}
