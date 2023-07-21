@@ -27,6 +27,9 @@ dependencies {
 
     implementation 'javax.xml.bind:jaxb-api:2.3.0'
 
+    implementation project(":common")
+    implementation project(":user-service")
+
 }
 
 dependencyManagement {

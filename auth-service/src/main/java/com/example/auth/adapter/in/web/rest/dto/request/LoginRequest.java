@@ -1,4 +1,4 @@
-package com.example.auth.controller.dto.request;
+package com.example.auth.adapter.in.web.rest.dto.request;
 
 import lombok.AccessLevel;
 import lombok.Getter;

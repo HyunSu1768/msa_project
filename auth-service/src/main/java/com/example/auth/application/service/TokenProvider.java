@@ -1,8 +1,7 @@
-package com.example.auth.service;
+package com.example.auth.application.service;
 
-import com.example.auth.controller.dto.response.TokenResponse;
-import com.example.auth.env.JwtProperty;
-import io.jsonwebtoken.Claims;
+import com.example.auth.adapter.in.web.rest.dto.response.TokenResponse;
+import com.example.auth.temp.env.JwtProperty;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.RequiredArgsConstructor;

@@ -1,4 +1,4 @@
-package com.example.auth.controller.dto.response;
+package com.example.auth.adapter.in.web.rest.dto.response;
 
 import lombok.Builder;
 import lombok.Getter;

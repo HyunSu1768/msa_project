@@ -1,4 +1,4 @@
-package com.example.auth.env;
+package com.example.auth.temp.env;
 
 import lombok.Getter;
 import org.springframework.boot.context.properties.ConfigurationProperties;

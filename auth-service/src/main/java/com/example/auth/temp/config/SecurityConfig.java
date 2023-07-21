@@ -1,4 +1,4 @@
-package com.example.auth.config;
+package com.example.auth.temp.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
