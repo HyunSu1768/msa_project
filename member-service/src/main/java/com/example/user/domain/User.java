@@ -1,5 +1,6 @@
 package com.example.user.domain;
 
+import com.example.user.adapter.in.web.rest.dto.response.UserDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -28,5 +29,9 @@ public class User {
 
     @Column(name = "name")
     private String name;
+
+    public UserDto toDto(){
+        return UserDto.of(this);
+    }
 
 }

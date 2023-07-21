@@ -6,7 +6,7 @@ import lombok.Getter;
 
 @Builder
 @Getter
-public class UserInfoResponse {
+public class UserDto {
 
     private String name;
 
@@ -14,8 +14,8 @@ public class UserInfoResponse {
 
     private String password;
 
-    public static UserInfoResponse of(User user){
-        return UserInfoResponse.builder()
+    public static UserDto of(User user){
+        return UserDto.builder()
                 .password(user.getPassword())
                 .accountId(user.getAccountId())
                 .name(user.getName())
