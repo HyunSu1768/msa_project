@@ -6,6 +6,7 @@ import com.example.common.exception.ErrorCode;
 import com.example.user.adapter.in.web.rest.dto.request.SaveUserDto;
 import com.example.user.adapter.in.web.rest.dto.response.UserDto;
 import com.example.user.adapter.out.persistence.repository.UserRepository;
+import com.example.user.application.port.out.LoadUserByAccountIdPort;
 import com.example.user.application.port.out.LoadUserPort;
 import com.example.user.application.port.out.SaveUserPort;
 import com.example.user.domain.User;
@@ -13,7 +14,7 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @PersistenceAdapter
-public class UserPersistenceAdapter implements SaveUserPort, LoadUserPort {
+public class UserPersistenceAdapter implements SaveUserPort, LoadUserPort, LoadUserByAccountIdPort {
 
     private final UserRepository userRepository;
 
@@ -28,6 +29,16 @@ public class UserPersistenceAdapter implements SaveUserPort, LoadUserPort {
     public UserDto loadUser(Long userId) {
 
         User user = userRepository.findById(userId)
+                .orElseThrow(() -> new BusinessException(ErrorCode.USER_NOT_FOUND));
+
+        return user.toDto();
+
+    }
+
+    @Override
+    public UserDto loadUserByAccountId(String accountId) {
+
+        User user = userRepository.findByAccountId(accountId)
                 .orElseThrow(() -> new BusinessException(ErrorCode.USER_NOT_FOUND));
 
         return user.toDto();
