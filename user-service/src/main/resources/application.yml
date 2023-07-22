@@ -27,3 +27,6 @@ eureka:
 
 server:
   port: 8081
+
+kafka:
+  serverAddress: localhost:9092

@@ -28,6 +28,8 @@ dependencies {
     runtimeOnly 'com.mysql:mysql-connector-j'
 
     implementation project(":common")
+
+    implementation 'org.springframework.kafka:spring-kafka'
 }
 
 dependencyManagement {

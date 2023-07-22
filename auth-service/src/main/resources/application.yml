@@ -1,6 +1,11 @@
 spring:
   application:
     name: AUTH-SERVICE
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${DB_URL:jdbc:mysql://localhost:3306/member_service}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:qpwoeiru1768}
 
 eureka:
   instance:
@@ -20,3 +25,7 @@ jwt:
   refreshExpiredExp: ${JWT_REFRESH_EXP:432000000}
   header: ${JWT_HEADER:Authorization}
   prefix: ${JWT_PREFIX:Bearer}
+
+kafka:
+  serverAddress: localhost:9092
+
