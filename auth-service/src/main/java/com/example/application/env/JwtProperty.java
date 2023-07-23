@@ -1,4 +1,4 @@
-package com.example.temp.env;
+package com.example.application.env;
 
 import lombok.Getter;
 import org.springframework.boot.context.properties.ConfigurationProperties;

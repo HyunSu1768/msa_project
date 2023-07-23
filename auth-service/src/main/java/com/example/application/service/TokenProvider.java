@@ -1,7 +1,7 @@
 package com.example.application.service;
 
 import com.example.adapter.in.web.rest.dto.response.TokenResponse;
-import com.example.temp.env.JwtProperty;
+import com.example.application.env.JwtProperty;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.RequiredArgsConstructor;
